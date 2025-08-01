@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-body-form: #a1c4fd;
+  --color-bg-body-to: #c2e9fb;
+
+  --color-bg-card-form: #ace0f9;
+  --color-bg-card-to: #fff1eb;
+
+  --color-text-github: #000;
+  --color-text-blog: #fdc700;
+  --color-text-bilibili: #fb64b6;
+  --color-text-youtube: #ff6467;
+
+  --color-text-github-shadow: rgba(38, 38, 38, 0.4);
+  --color-text-blog-shadow: rgba(253, 199, 0, 0.4);
+  --color-text-bilibili-shadow: rgba(251, 100, 182, 0.4);
+  --color-text-youtube-shadow: rgba(255, 100, 103, 0.4);
+}
+
+.dark {
+  --color-bg-body-form: #d7d2cc;
+  --color-bg-body-to: #304352;
+
+  --color-bg-card-form: #616161;
+  --color-bg-card-to: #9bc5c3;
+}
+
+@layer item {
+  .bio-list-item::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    clip-path: circle(0% at var(--x) var(--y));
+  }
+  to {
+    clip-path: circle(150% at var(--x) var(--y));
+  }
+}
+
+::view-transition-new(root) {
+  animation: reveal 0.7s ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
