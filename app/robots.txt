@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://zsdy.dev/sitemap.xml
+Sitemap: https://www.zsdy.dev/sitemap.xml
